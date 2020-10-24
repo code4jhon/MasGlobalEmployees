@@ -1,6 +1,6 @@
 package com.masglobal.employees.controllers;
 
-import com.masglobal.employees.Services.EmployeeService;
+import com.masglobal.employees.services.EmployeeService;
 import com.masglobal.employees.models.Employee;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

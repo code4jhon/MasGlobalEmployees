@@ -1,4 +1,4 @@
-package com.masglobal.employees.Services;
+package com.masglobal.employees.services;
 
 import com.masglobal.employees.models.Contractor;
 import com.masglobal.employees.models.Employee;
