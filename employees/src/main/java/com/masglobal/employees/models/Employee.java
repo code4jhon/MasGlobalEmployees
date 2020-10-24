@@ -1,7 +1,7 @@
 package com.masglobal.employees.models;
 
 public class Employee {
-  private int id;
+  private long id;
   private String name;
   private String contractTypeName;
   private int roleId;
@@ -11,7 +11,7 @@ public class Employee {
   private float monthlySalary;
   private float annualSalary;
 
-  public int getId() {
+  public long getId() {
     return id;
   }
 

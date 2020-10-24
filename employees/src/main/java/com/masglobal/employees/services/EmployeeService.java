@@ -35,4 +35,16 @@ public class EmployeeService {
 
     return employees;
   }
+
+  public static Employee getEmployeeById (long id) {
+    ArrayList<Employee> employees = getEmployees();
+
+    for (Employee employee: employees) {
+      if (employee.getId() == id) {
+        return employee;
+      }
+    }
+
+    return null;
+  }
 }
