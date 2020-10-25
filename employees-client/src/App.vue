@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img class="logo" alt="Mas Global Logo" src="./assets/masGlobal.png">
+    <search-form></search-form>
+    <employees-table></employees-table>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchForm from './components/SearchForm'
+import EmployeesTable from './components/EmployeeTable'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    SearchForm,
+    EmployeesTable
+  },
+
+  data () {
+    return {
+      fit: true,
+      logoSrc: './assets/masGlobal.png'
+    }
+  } 
 }
 </script>
 
@@ -23,6 +33,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px 20px 20px 20px;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 50px;
 }
 </style>
