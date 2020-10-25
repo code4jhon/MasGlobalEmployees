@@ -21,4 +21,4 @@ At this point the Employees UI should be served in your localhost and should be 
 
 IMPORTANT: 
 
-Port 8080 should be available for Tomcat before running `mvn spring-boot:run`, the BE application and FE application each run in their own domain, and the FE webapp is configured to consume the services at http:localhost:8080. 
+Port 8080 should be available for Tomcat before running `mvn spring-boot:run`, the BE application and FE application each run in their own domain, and the FE webapp is configured to consume the services at http://localhost:8080. 
