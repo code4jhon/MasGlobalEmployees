@@ -2,7 +2,7 @@
   
   <el-form :inline="true" :model="formInline" class="demo-form-inline">
     <el-form-item label="Search by Employee ID">
-      <el-input v-model="formInline.employeeId"  placeholder="Type the user ID" clearable></el-input>
+      <el-input type="number" v-model="formInline.employeeId"  placeholder="Type the user ID" clearable></el-input>
     </el-form-item>
 
     <el-form-item>

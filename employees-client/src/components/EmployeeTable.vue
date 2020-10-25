@@ -2,36 +2,36 @@
   <el-table
     :data="employees"
     stripe
-    style="width: 100%">
+    :fit="true">
     <el-table-column
       prop="id"
       label="ID"
-      width="180">
+      width="50">
     </el-table-column>
     <el-table-column
       prop="name"
       label="Name"
-      width="180">
+      width="150">
     </el-table-column>
     <el-table-column
       prop="contractTypeName"
       label="Contract Type"
-      width="180">
+      width="150">
     </el-table-column>
     <el-table-column
       prop="roleName"
       label="Role Name"
-      width="180">
+      width="150">
     </el-table-column>
     <el-table-column
       prop="hourlySalary"
       label="Hourly Salary"
-      width="180">
+      width="150">
     </el-table-column>
     <el-table-column
       prop="monthlySalary"
       label="Monthly Salary"
-      width="180">
+      width="150">
     </el-table-column>
     <el-table-column
       prop="annualSalary"
