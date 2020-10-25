@@ -1,11 +1,11 @@
 <template>
   <el-table
-    :data="tableData"
+    :data="employees"
     stripe
     style="width: 100%">
     <el-table-column
-      prop="date"
-      label="Date"
+      prop="id"
+      label="ID"
       width="180">
     </el-table-column>
     <el-table-column
@@ -14,33 +14,56 @@
       width="180">
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="Address">
+      prop="contractTypeName"
+      label="Contract Type"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="roleName"
+      label="Role Name"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="hourlySalary"
+      label="Hourly Salary"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="monthlySalary"
+      label="Monthly Salary"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="annualSalary"
+      label="Anual Salary">
     </el-table-column>
   </el-table>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        tableData: [{
-          date: '2016-05-03',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles'
-        }, {
-          date: '2016-05-02',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles'
-        }, {
-          date: '2016-05-04',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles'
-        }, {
-          date: '2016-05-01',
-          name: 'Tom',
-          address: 'No. 189, Grove St, Los Angeles'
-        }]
+    props: ['employeeData'],
+
+
+    computed: {
+      employees () {
+        const data = this.employeeData || []
+
+        return data.map(this.formatEmployeeData)
+      }
+    },
+
+    methods: {
+      formatEmployeeData (employee) {
+        return {
+          id: employee.id,
+          name: employee.name,
+          contractTypeName: employee.contractTypeName === 'HourlySalaryEmployee' ? 'Hourly' : 'Monthly',
+          roleName: employee.roleName,
+          hourlySalary: employee.contractTypeName === 'HourlySalaryEmployee' ? this.$options.filters.currency(employee.hourlySalary) : 'N/A',
+          monthlySalary: employee.contractTypeName === 'MonthlySalaryEmployee' ? this.$options.filters.currency(employee.monthlySalary) : 'N/A',
+          annualSalary: this.$options.filters.currency(employee.annualSalary)
+        }
       }
     }
   }

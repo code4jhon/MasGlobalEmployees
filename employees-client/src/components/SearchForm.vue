@@ -6,7 +6,7 @@
     </el-form-item>
 
     <el-form-item>
-      <el-button type="primary" @click="onSubmit">Query</el-button>
+      <el-button type="primary" @click="onSubmit">Search</el-button>
     </el-form-item>
   </el-form>
   
@@ -23,7 +23,7 @@
     },
     methods: {
       onSubmit() {
-        console.log('submit!');
+        this.$emit('search-click', this.formInline.employeeId)
       }
     }
   }
